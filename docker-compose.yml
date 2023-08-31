@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   backend:
-      build: .
+      build: ./backend
       command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
       volumes:
         - ./backend:/backend-bookstore-drf
@@ -18,5 +18,16 @@ services:
       POSTGRES_PASSWORD: bookstore_user_/1
     volumes:
       - pgdata:/var/lib/posgresql/data
+  # frontend:
+  #    build: ./frontend
+  #    container_name: frontend
+  #    command: bash -c "npm start"
+  #    ports:
+  #     - '3000:3000'
+  #    stdin_open: true
+  #    tty: true
+  #    environment:
+  #     - WATCHPACK_POLLING=true
 volumes:
   pgdata:
+  

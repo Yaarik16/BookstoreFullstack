@@ -8,6 +8,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /backend-bookstore-drf
 
 COPY ./requirements.txt .
+COPY ./locale ./backend-bookstore-drf
 
 ENV SECRET_KEY=django-insecure-d3v_^&h1x6v-%#ab!(s**sw4k6j^@@mb%6dk$iszc(ms^1%ymc
 ENV DEBUG=True
